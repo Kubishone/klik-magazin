@@ -26,7 +26,7 @@ export const magazines: Magazine[] = [
     title: 'KLIK Magazin',
     subtitle: 'Broj 3',
     date: '2026-05-01',
-    pdfUrl: 'https://github.com/Kubishone/klik-magazin/releases/download/v1.0/kLIK.CASOPIS.4.komplet.pdf',
+    pdfUrl: '/api/pdf',
     isCurrent: true,
   },
 

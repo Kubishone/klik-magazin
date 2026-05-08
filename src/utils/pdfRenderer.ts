@@ -1,15 +1,16 @@
 import * as pdfjsLib from 'pdfjs-dist'
+import pdfjsWorkerUrl from 'pdfjs-dist/build/pdf.worker.min.mjs?url'
 
-pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-  'pdfjs-dist/build/pdf.worker.min.mjs',
-  import.meta.url,
-).href
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfjsWorkerUrl
 
 export async function loadPDF(
   source: File | string,
 ): Promise<pdfjsLib.PDFDocumentProxy> {
   if (typeof source === 'string') {
-    return pdfjsLib.getDocument(source).promise
+    return pdfjsLib.getDocument({
+      url: source,
+      withCredentials: false,
+    }).promise
   }
   const arrayBuffer = await source.arrayBuffer()
   return pdfjsLib.getDocument({ data: arrayBuffer }).promise
@@ -18,7 +19,7 @@ export async function loadPDF(
 export async function renderPageToDataUrl(
   pdf: pdfjsLib.PDFDocumentProxy,
   pageNumber: number,
-  scale = 1.8,
+  scale = 1.5,
 ): Promise<string> {
   const page = await pdf.getPage(pageNumber)
   const viewport = page.getViewport({ scale })

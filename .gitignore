@@ -1,0 +1,22 @@
+# Zavisnosti
+node_modules/
+
+# Build output
+dist/
+
+# PDF fajlovi i veliki assets — preveliki za git
+public/magazines/*.pdf
+Dodatci/
+
+# Sistemski fajlovi
+.DS_Store
+Thumbs.db
+
+# Environment varijable
+.env
+.env.local
+.env.production
+
+# Editor
+.vscode/settings.json
+*.log

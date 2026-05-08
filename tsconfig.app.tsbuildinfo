@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/vite-env.d.ts","./src/components/flipbook.tsx","./src/components/issuecard.tsx","./src/components/page.tsx","./src/data/magazines.ts","./src/hooks/usebookmark.ts","./src/hooks/usepdf.ts","./src/hooks/usesound.ts","./src/types/react-pageflip.d.ts","./src/utils/pdfrenderer.ts"],"version":"5.9.3"}

@@ -8,6 +8,9 @@ dist/
 public/magazines/*.pdf
 Dodatci/
 
+# Claude Code
+.claude/
+
 # Sistemski fajlovi
 .DS_Store
 Thumbs.db
